@@ -1,10 +1,11 @@
 from django.shortcuts import render
 from django.http import HttpResponse
 
-
+# Homepage view
 def index(request):
-    return HttpResponse("Hello, world..")
-    #return render(request, 'home_page.html', {})
+    return render(request, 'home_page.html', {})
 
+# Results page view
 def search_results(request):
-    return render(request, 'results_page.html',{})
+    characteristic = request.POST['physique']
+    return render(request, 'results_page.html', {'context': characteristic})
