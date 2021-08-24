@@ -7,5 +7,5 @@ def index(request):
 
 # Results page view
 def search_results(request):
-    characteristic = request.POST['physique']
+    characteristic = request.GET['physique']
     return render(request, 'results_page.html', {'context': characteristic})
