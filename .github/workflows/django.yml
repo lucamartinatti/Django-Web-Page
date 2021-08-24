@@ -28,10 +28,10 @@ jobs:
     - uses: harmon758/postgresql-action@v1
       with:
         postgresql version: '12'
-        postgresql user: ${{secrets.DATABASE_USERNAME}},
-        postgresql password: ${{secrets.DATABASE_PASSWORD}},
-        postgresql host: 'localhost',
-        postgresql port: '5432',
+        postgresql user: ${{secrets.DATABASE_USERNAME}}
+        postgresql password: ${{secrets.DATABASE_PASSWORD}}
+        postgresql host: 'localhost'
+        postgresql port: '5432'
     - name: Run migrations
       run: python manage.py migrate
     - name: Run Tests
