@@ -1,24 +1,25 @@
+{% extends 'base.html' %}
+
+{% block content %}
+
 {% load static %}
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <title>SLM</title>
-    <style>
-       h1 {text-align: center;}
-    </style>
-</head>
-<body>
-    <h1>Somebody Like Me</h1>
-    <!-- <input type="text" name="search" placeholder="Search.."> -->
-    <link rel="stylesheet" type="text/css" href="{% static 'style.css' %}">
-    <div class="wrap">
-        <div class="search">
-              <input type="text" class="searchTerm" placeholder="Enter physical aspect">
-              <button type="submit" class="searchButton" onclick="http://127.0.0.1:8000/home/">
-                  <i class="fa fa-search"></i>
-              </button>
-        </div>
+
+<h1>Somebody Like Me</h1>
+<!-- <input type="text" name="search" placeholder="Search.."> -->
+<link rel="stylesheet" type="text/css" href="{% static 'style.css' %}">
+<!--<div class="wrap">
+    <div class="search">
+          <input type="text" class="searchTerm" placeholder="Enter physical aspect">
+          <button type="submit" class="searchButton" onclick="http://127.0.0.1:8000/search_results/">
+              <i class="fa fa-search"></i>
+          </button>
     </div>
-</body>
-</html>
+</div> -->
+
+<form action="search_results" method="post">
+    {% csrf_token %}
+    Enter physical characteristics: <input type="text", name="physique"><br>
+    <input type="submit">
+</form>
+
+{% endblock %}
