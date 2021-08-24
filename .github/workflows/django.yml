@@ -29,10 +29,10 @@ jobs:
       with:
         postgresql version: '12'
         postgresql db: 'postgwebdb'
-        postgresql user: '${{secrets.DATABASE_USERNAME}}'
-        postgresql password: '${{secrets.DATABASE_PASSWORD}}'
-    - name: Run migrations
-      run: python manage.py migrate
+        postgresql user: ${{secrets.DATABASE_USERNAME}}
+        postgresql password: ${{secrets.DATABASE_PASSWORD}}
+    #- name: Run migrations
+    #  run: python manage.py migrate
     - name: Run Tests
       run: |
         python manage.py test
