@@ -1,1 +1,3 @@
-# Django-Web-Page
+# Django Web Page
+
+Basic web page with CI system integrated
