@@ -29,8 +29,8 @@ jobs:
       with:
         postgresql version: '12'
         postgresql db: 'postgwebdb'
-        postgresql user: ${{secrets.DATABASE_USERNAME}}
-        postgresql password: ${{secrets.DATABASE_PASSWORD}}
+        postgresql user: '${{secrets.DATABASE_USERNAME}}'
+        postgresql password: '${{secrets.DATABASE_PASSWORD}}'
         postgresql host: 'localhost'
         postgresql port: '5432'
     - name: Run migrations
