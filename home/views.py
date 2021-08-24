@@ -6,5 +6,5 @@ def index(request):
     return render(request, 'home_page.html', {})
 
 def search_results(request):
-    context = {}
-    return render(request, 'results_page.html', context)
+    characteristic = request.POST['physique']
+    return render(request, 'results_page.html', {'context': characteristic})

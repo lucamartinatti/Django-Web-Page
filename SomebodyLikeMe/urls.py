@@ -16,9 +16,9 @@ Including another URLconf
 from django.contrib import admin
 from django.urls import include, path
 
-from home.views import index
+from home.views import index, search_results
 
 urlpatterns = [
     path('admin/', admin.site.urls),
-    path('', index),
+    path('', include('home.urls')),
 ]
